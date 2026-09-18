@@ -1,0 +1,7 @@
+hypothesis survival through 12 blocks, 3 prompts x 8 contexts, fp32 GPT-2
+  K contexts | chord: greedy-path top-1      n_i in top-K      | keyed: argmax==n_i    n_i in top-5
+  2       24 |  18/24  =   75%     30/48   =   62%   |    0/48   =    0%      0/48   =    0%
+  4       24 |  16/24  =   67%     50/96   =   52%   |    0/96   =    0%      0/96   =    0%
+  8       24 |  13/24  =   54%    102/192  =   53%   |    0/192  =    0%      0/192  =    0%
+ 16       24 |  10/24  =   42%    196/384  =   51%   |    0/384  =    0%      0/384  =    0%
+ 32       24 |   9/24  =   38%    397/768  =   52%   |    0/768  =    0%      0/768  =    0%

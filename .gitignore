@@ -1,0 +1,32 @@
+# large exported data (regenerable from GPT-2 with edge_model.py / lap_wire.py)
+gpt2_dial/*.i16
+gpt2_dial/*.f32
+gpt2_dial/*.npz
+*.dylib
+__pycache__/
+# compiled binaries
+bandwidth
+bandwidth8
+chain
+clock_probe
+clock_probe2
+cyclers
+ecc_link
+edge_link
+gap_link
+gemv_ticks
+gemv_ticks2
+gpt2_metal
+hop
+libedge.dylib
+metal_ticks
+onchip
+pair
+pairs_gpu
+resident
+residue_link
+rotators
+sleep_probe
+sorted_link
+steps_gemv
+steps_link

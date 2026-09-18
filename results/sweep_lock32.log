@@ -1,0 +1,50 @@
+/Users/abundancemachine/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+  tick   53: position 4 locked ',' -> struck as input at tick 54; 5 positions still flowing
+  tick   96: position 5 locked ' the' -> struck as input at tick 97; 6 positions still flowing
+  tick  167: position 6 locked ' world' -> struck as input at tick 168; 3 positions still flowing
+  tick  215: position 7 locked ' was' -> struck as input at tick 216; 3 positions still flowing
+  tick  279: position 8 locked ' a' -> struck as input at tick 280; 3 positions still flowing
+  tick  348: position 9 locked ' place' -> struck as input at tick 349; 3 positions still flowing
+  tick  397: position 10 locked ' of' -> struck as input at tick 398; 3 positions still flowing
+  tick  502: position 11 locked ' great' -> struck as input at tick 503; 2 positions still flowing
+  tick  577: position 12 locked ' beauty' -> struck as input at tick 578; 2 positions still flowing
+  tick  631: position 13 locked ',' -> struck as input at tick 632; 3 positions still flowing
+  tick  676: position 14 locked ' and' -> struck as input at tick 677; 3 positions still flowing
+  tick  718: position 13 settled to ' and', not ',' -> un-strike, restart from there (1 later notes dropped)
+  tick  796: position 14 locked ' great' -> struck as input at tick 797; 2 positions still flowing
+  tick  863: position 15 locked ' danger' -> struck as input at tick 864; 2 positions still flowing
+  tick  908: position 16 locked '.' -> struck as input at tick 909; 3 positions still flowing
+  tick  953: position 17 locked ' The' -> struck as input at tick 954; 3 positions still flowing
+  tick 1000: position 18 locked 's' -> struck as input at tick 1001; 4 positions still flowing
+  tick 1057: position 19 locked 'aurus' -> struck as input at tick 1058; 3 positions still flowing
+  tick 1094: position 18 settled to ' world', not 's' -> un-strike, restart from there (1 later notes dropped)
+  tick 1142: position 19 locked ' was' -> struck as input at tick 1143; 2 positions still flowing
+  tick 1187: position 20 locked ' a' -> struck as input at tick 1188; 3 positions still flowing
+  tick 1255: position 21 locked ' place' -> struck as input at tick 1256; 3 positions still flowing
+  tick 1300: position 22 locked ' of' -> struck as input at tick 1301; 3 positions still flowing
+  tick 1347: position 23 locked ' great' -> struck as input at tick 1348; 3 positions still flowing
+  tick 1392: position 24 locked ' danger' -> struck as input at tick 1393; 4 positions still flowing
+  tick 1437: position 25 locked '.' -> struck as input at tick 1438; 4 positions still flowing
+  tick 1482: position 26 locked ' The' -> struck as input at tick 1483; 4 positions still flowing
+  tick 1529: position 27 locked ' world' -> struck as input at tick 1530; 4 positions still flowing
+  tick 1533: position 25 settled to ',', not '.' -> un-strike, restart from there (2 later notes dropped)
+  tick 1581: position 26 locked ' and' -> struck as input at tick 1582; 2 positions still flowing
+  tick 1638: position 27 locked ' danger' -> struck as input at tick 1639; 3 positions still flowing
+  tick 1707: position 28 locked ' was' -> struck as input at tick 1708; 3 positions still flowing
+  tick 1722: position 27 settled to ' the', not ' danger' -> un-strike, restart from there (1 later notes dropped)
+  tick 1801: position 28 locked ' world' -> struck as input at tick 1802; 2 positions still flowing
+  tick 1847: position 29 locked ' was' -> struck as input at tick 1848; 3 positions still flowing
+  tick 1892: position 30 locked ' a' -> struck as input at tick 1893; 3 positions still flowing
+  tick 1957: position 31 locked ' place' -> struck as input at tick 1958; 3 positions still flowing
+  tick 2002: position 32 locked ' of' -> struck as input at tick 2003; 3 positions still flowing
+  tick 2074: position 33 locked ' great' -> struck as input at tick 2075; 3 positions still flowing
+  tick 2119: position 34 locked ' danger' -> struck as input at tick 2120; 3 positions still flowing
+  tick 2164: position 35 locked '.' -> struck as input at tick 2165; 3 positions still flowing
+
+  batch:     ', the world was a place of great beauty and great danger. The world was a place of great danger, and the world was a place of great danger.'
+  pipelined: ', the world was a place of great beauty and great danger. The world was a place of great danger, and the world was a place of great danger.'   MATCH
+  committed tokens that their own position later settled away from: 0 of 32
+  rollbacks: 4;  total ticks 2305 for 32 tokens = 72.0 per token including settling
+  ticks between commits: [53, 43, 71, 48, 64, 69, 49, 105, 75, 141, 78, 67, 45, 45, 141, 48, 45, 68, 45, 47, 45, 141, 48, 141, 79, 46, 45, 65, 45, 72, 45, 45]  -> 67.6 per token pipelined, vs 141 per token one at a time

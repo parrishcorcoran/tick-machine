@@ -1,0 +1,65 @@
+/Users/abundancemachine/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+  tick   29: position 4 struck [',']  (1 branch flowing)
+  tick   48: position 5 struck [' the', ' I']  (2 branches flowing)
+  tick   80: position 6 struck [' world', ' two', ' was', ' had']  (4 branches flowing)
+  tick  115: position 7 struck [' was', ' would', '-', ' a', ' the', ' a', ' enough']  (7 branches flowing)
+  tick  173: position 8 struck [' a', ' filled', ' be', ' have', 'thirds', 'dimensional', ' little', ' young', ' only', ' dream', ' of']  (11 branches flowing)
+  tick  203: position 9 struck [' a', '-', ' with', ' filled', 'held', ' been', ' of', ' majority', ' world']  (9 branches flowing)
+  tick  253: position 10 struck ['ether', ' place', 'ch', 'changing', ' the', ' a', ' with', ' by', ' a']  (9 branches flowing)
+  tick  296: position 11 struck [',', '.', ' of', ' where', 'ang', '.', ',', 's', 'ether']  (9 branches flowing)
+  tick  344: position 9 settled to ' place'; no branch had it -> un-strike
+  tick  369: position 10 struck [' of', ' where']  (2 branches flowing)
+  tick  409: position 11 struck [' great', ' peace', ' the', ' people']  (4 branches flowing)
+  tick  464: position 12 struck [' beauty', ' power', ',', ' and', ' world', ' gods', ' could', ' were']  (8 branches flowing)
+  tick  502: position 13 struck [',', ' and', ',', '.', ' and', ',', ' people', ' was', ' were', ' live', ' not']  (11 branches flowing)
+  tick  530: position 14 struck [' and', ' where', ',', '.', ' and', ' The', '\n', ',', ' in', '.']  (10 branches flowing)
+  tick  559: position 15 struck [',', '.', ',', '.', ' in', ' as', '\n', ' and', ',', 'ocracy', 'The']  (11 branches flowing)
+  tick  612: position 16 struck [' as', ' in', '\n', ' .', ' in', ' as', ' the', ' The', ' the', ' the', 'The', '.']  (12 branches flowing)
+  tick  650: position 17 struck ['s', ' most', ' world', ' great', ' world', ' and', ' power']  (7 branches flowing)
+  tick  671: position 14 settled to ' great'; no branch had it -> un-strike
+  tick  703: position 15 struck [' power', ' wealth']  (2 branches flowing)
+  tick  724: position 16 struck ['.', ',', '.', ',']  (4 branches flowing)
+  tick  745: position 17 struck ['\n', ' The', ' and', ' the', '\n', ' The', ' and', ' but']  (8 branches flowing)
+  tick  815: position 18 struck ['The', 'But', ' world', ' people', ' the', ' it', ' world', ' land', 'But', ' world', ' the', ' now']  (12 branches flowing)
+  tick  844: position 15 settled to ' danger'; no branch had it -> un-strike
+  tick  865: position 16 struck ['.', ',']  (2 branches flowing)
+  tick  886: position 17 struck ['\n', ' The', ' and', ' where']  (4 branches flowing)
+  tick  912: position 18 struck ['The', 'But', 's', 'ocracy', ' great', ',', ',', '.']  (8 branches flowing)
+  tick  946: position 19 struck [' world', ',', 'The', 'aurus', ' was', ',', ' danger', ' dangers', ' in', ' in', ' .']  (11 branches flowing)
+  tick  995: position 20 struck [' was', ' of', ' as', ' alas', ' world', 'Great', ' was', ',', ' a', ' the', ' was', ' were', ' the', ' the', ' the']  (15 branches flowing)
+  tick 1052: position 21 struck [' a', ' the', ' the', ' or', ' place', ' great', ' great', ' aristocracy']  (8 branches flowing)
+  tick 1053: position 18 settled to ' world'; no branch had it -> un-strike
+  tick 1077: position 19 struck [' was', ',']  (2 branches flowing)
+  tick 1098: position 20 struck [' a', ' the', ' the', ' as']  (4 branches flowing)
+  tick 1136: position 21 struck [' place', ' world', ' place', ' the', ' world', ' the', ' was']  (7 branches flowing)
+  tick 1174: position 22 struck [' of', ' where', ' of', ',', ' of', ' where', ' world', ',', ' of', ' world', ',']  (11 branches flowing)
+  tick 1225: position 23 struck [' great', ' the', ' people', ' the', ' great', ' and', ' the', ' great', ' the']  (9 branches flowing)
+  tick 1271: position 24 struck [' danger', ' fear', ' world', ' people', ' could', ' were']  (6 branches flowing)
+  tick 1314: position 25 struck ['.', ',', '.', ',', ' was', ' could', ' were', ' of', ' live', ' able']  (10 branches flowing)
+  tick 1339: position 26 struck [' The', '\n', ' and', ' the', ' The', '\n', ' and', ' the']  (8 branches flowing)
+  tick 1374: position 27 struck [' world', 's', 'The', 'And', ' danger', ' great', ' the', ' world', 'The', ' great', ' the']  (11 branches flowing)
+  tick 1405: position 28 struck [' was', 'aurus', ' world', 'World', '\n', 'The', '.', ',', ' danger', ' the', ' was', ' world', ' danger', ' the']  (14 branches flowing)
+  tick 1431: position 29 struck [' a', ' the', ' was', ',', ' was', ' was', '\n', 'The', ' world', '\n', ' and', '.', ' the']  (13 branches flowing)
+  tick 1462: position 30 struck ['The', 'And', ' danger', ' The', '\n', ' the', ',']  (7 branches flowing)
+  tick 1491: position 31 struck [' world', 'World', '\n', 'And', '.', ',', ' world', 's', 'The']  (9 branches flowing)
+  tick 1515: position 27 settled to ' the'; no branch had it -> un-strike
+  tick 1542: position 28 struck [' the', ' was']  (2 branches flowing)
+  tick 1565: position 29 struck [' the', ' was', ' a', ' the']  (4 branches flowing)
+  tick 1586: position 30 struck [' the', 's', ' a', ' the', ' a', ' place', ' world', ' the']  (8 branches flowing)
+  tick 1622: position 31 struck [' the', ' was', 'aurus', ' place', ' great', ' world', ' the', ' a', ' of', ' of', ' the']  (11 branches flowing)
+  tick 1653: position 32 struck [' the', ' was', ' a', ' the', ' was', ' of', ' of', ' danger', ' of', ' the', ' a', ' danger', ' danger', ' the']  (14 branches flowing)
+  tick 1683: position 28 settled to ' world'; no branch had it -> un-strike
+  tick 1705: position 29 struck [' was', ' of']  (2 branches flowing)
+  tick 1727: position 30 struck [' a', ' the', ' the', ' great']  (4 branches flowing)
+  tick 1760: position 31 struck [' place', ' great', ' world', ' place', ' was', ' world', ' danger', ' dangers']  (8 branches flowing)
+  tick 1783: position 32 struck [' of', ' place', ' danger', ' of', '.', ' of', ' where', ' a', ' was', '.', '.']  (11 branches flowing)
+  tick 1833: position 33 struck [' great', ' of', '.', '.', ',', ' great', ' danger', '\n', ' great', ' the', ' place', ' a', ' The', ' The']  (14 branches flowing)
+  tick 1865: position 34 struck [' danger', ' dangers', ' danger', ' The', '\n', ' The', '\n', ' and', ' danger', '.', 'The', ' danger', ' the']  (13 branches flowing)
+  tick 1895: position 35 struck ['.', ',', '.', ',', '.', ',', ' world', ' The', 'The', ' world', 'The', '.']  (12 branches flowing)
+
+  batch:    ', the world was a place of great beauty and great danger. The world was a place of great danger, and the world was a place of great danger.'
+  branched: ', the world was a place of great beauty and great danger. The world was a place of great danger, and the world was a place of great danger.'   MATCH
+  splits 145, max branches alive 15, rollbacks 6
+  ticks/token: 37.2 between strikes, 63.6 all in (vs 141 one at a time)

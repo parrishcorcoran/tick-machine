@@ -1,0 +1,14 @@
+    A step 0: sent 768 activations, got token 198
+    A step 4: sent 768 activations, got token 262
+    A step 8: sent 768 activations, got token 198
+    A step 0: sent 768 activations, got token 0
+    A step 4: sent 768 activations, got token 262
+    A step 8: sent 768 activations, got token 198
+    A step 0: sent 768 activations, got token 262
+    A step 4: sent 768 activations, got token 0
+    A step 8: sent 768 activations, got token 717
+GPT-2 as two sections, tick 200 ns, 3 copies: A = embeddings + blocks 0-5, B = blocks 6-11 + head; only edges between them
+  'The capital of France is'       differs   ' the capital of!\n\n!!\n!,!!\n,,!!\n\n,!!\n!,!\n\n,!\n'
+  'Once upon a time'               differs   ', the world was!\n!!!!!!!\n\n!\n\nThe world is a place!!\n\nThe world!\n\n'
+  'In 1492, Columbus'              differs   '!\n\nThe first of the!\n\nThe!\n!!!!\n\nThe!!\n!,\n\n!,\n\n,'
+  [MEASURED] not all identical;  0.3 tok/s;  per token: 2,304 activation edges A->B, 3 edges B->A, no weight ever crossed

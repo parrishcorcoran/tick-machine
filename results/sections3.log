@@ -1,0 +1,62 @@
+    B step 0: edges seen 2318 of 2318, |vec| max 2048, checksum ok
+    A step 0: token 198 after 1 send(s)
+    A step 1: token 0 after 1 send(s)
+    B step 1: edges seen 2317 of 2318, |vec| max 3219, checksum BAD
+    B step 1: edges seen 2318 of 2318, |vec| max 2047, checksum ok
+    A step 2: token 262 after 1 send(s)
+    B step 2: edges seen 2318 of 2318, |vec| max 2047, checksum ok
+    A step 3: token 11 after 1 send(s)
+    B step 3: edges seen 2318 of 2318, |vec| max 2047, checksum ok
+    A step 4: token 262 after 1 send(s)
+    B step 4: edges seen 2318 of 2318, |vec| max 5488, checksum ok
+    A step 5: token 3139 after 1 send(s)
+    B step 5: edges seen 2318 of 2318, |vec| max 4847, checksum ok
+    A step 6: token 286 after 1 send(s)
+    B step 6: edges seen 2318 of 2318, |vec| max 4119, checksum ok
+    A step 7: token 262 after 1 send(s)
+    A step 8: token 0 after 1 send(s)
+    B step 7: edges seen 2317 of 2318, |vec| max 5206, checksum BAD
+    A step 9: token 0 after 1 send(s)
+    B step 7: edges seen 2317 of 2318, |vec| max 11438, checksum BAD
+    B step 7: edges seen 2318 of 2318, |vec| max 9128, checksum ok
+    A step 10: token 0 after 1 send(s)
+    A step 11: token 0 after 1 send(s)
+    B step 8: edges seen 2317 of 2318, |vec| max 8072, checksum BAD
+    B step 8: edges seen 2318 of 2318, |vec| max 8457, checksum ok
+    A step 12: token 0 after 1 send(s)
+    B step 9: edges seen 2318 of 2318, |vec| max 9792, checksum ok
+    A step 13: token 0 after 1 send(s)
+    A step 14: token 0 after 1 send(s)
+    B step 10: edges seen 2315 of 2318, |vec| max 8620, checksum BAD
+    A step 15: token 0 after 1 send(s)
+    B step 10: edges seen 2317 of 2318, |vec| max 9314, checksum BAD
+    A step 16: token 0 after 1 send(s)
+    B step 10: edges seen 2317 of 2318, |vec| max 9345, checksum BAD
+    A step 17: token 0 after 1 send(s)
+    B step 10: edges seen 2317 of 2318, |vec| max 9470, checksum BAD
+    A step 18: token 0 after 1 send(s)
+    B step 10: edges seen 2317 of 2318, |vec| max 9490, checksum BAD
+    A step 19: token 0 after 1 send(s)
+    B step 10: edges seen 2317 of 2318, |vec| max 9521, checksum BAD
+    B step 10: edges seen 2318 of 2318, |vec| max 9604, checksum ok
+    A step 20: token 0 after 1 send(s)
+    A step 21: token 0 after 1 send(s)
+    B step 11: edges seen 2317 of 2318, |vec| max 9893, checksum BAD
+    B step 11: edges seen 2318 of 2318, |vec| max 10139, checksum ok
+    A step 22: token 0 after 1 send(s)
+    B step 12: edges seen 2318 of 2318, |vec| max 10376, checksum ok
+    A step 23: token 0 after 1 send(s)
+    B step 13: edges seen 2318 of 2318, |vec| max 10633, checksum ok
+    A step 24: token 0 after 1 send(s)
+    B step 14: edges seen 2318 of 2318, |vec| max 10824, checksum ok
+    A step 25: token 0 after 1 send(s)
+    A step 26: token 0 after 1 send(s)
+    B step 15: edges seen 2317 of 2318, |vec| max 11037, checksum BAD
+    B step 15: edges seen 2318 of 2318, |vec| max 11194, checksum ok
+    A step 27: token 0 after 1 send(s)
+    A step 28: token 0 after 1 send(s)
+    B step 16: edges seen 2317 of 2318, |vec| max 11405, checksum BAD
+    B step 16: edges seen 2318 of 2318, |vec| max 11550, checksum ok
+    A step 29: token 0 after 1 send(s)
+    B step 17: edges seen 2318 of 2318, |vec| max 11639, checksum ok
+    A step 30: token 0 after 1 send(s)
