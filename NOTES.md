@@ -608,3 +608,17 @@ or x added |c| times by doubling (shift-adds only).
   one-op firing:  5.30 ms per position, 4.98 ms on the GPU  ->  189 tok/s
   doubling:      17.42 ms per position, 16.88 ms on the GPU ->   57 tok/s
   (from 106 ms this morning; the memory floor for 247 MB of edges at 100 GB/s is 2.5 ms.)
+
+## 2026-09-18  optical LM: where the last milliseconds are (optical-transformer-lm repo)
+[MEASURED] lap shape sweep (piles x lanes per threadgroup: 32x8, 64x4, 128x2, 256x1, 16x16, 64x8, 128x4):
+  all 4.78-4.82 ms GPU per token. Shape irrelevant.
+[MEASURED] 49 laps alone in one buffer: 4.07 ms. Same laps with the arithmetic removed (READ_ONLY,
+  only the edge reads): 3.89 ms. int64 -> int32 product: -0.08 ms. The laps are pure edge-read time:
+  247 MB at ~63 GB/s. The arithmetic is free.
+[MEASURED] ushort4 loads (4 adjacent piles per lane, 8-byte reads): 4.20 ms; read-only 3.78 ms. No gain;
+  ~65 GB/s is this GPU's streaming rate for this pattern (resident.swift saw 80-86 GB/s for a
+  float-accumulate GEMV; onchip.swift 70-74 GB/s for 32-64 MB slices).
+Bytes lever: 16-bit dense is already near the information floor (11.09-bit phase + sign + laps);
+  12-bit phase plane + sign plane + sparse laps = ~243 MB, no saving.
+Remaining on this box: ~0.9 ms of ~150 small kernels (fusable to ~0.4) and ~20% better read pattern
+  at best -> ceiling ~3.5-4 ms/token, ~250-280 tok/s. Current: 5.1 ms, 195 tok/s, identical.
