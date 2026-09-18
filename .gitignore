@@ -31,3 +31,4 @@ sorted_link
 steps_gemv
 steps_link
 gpt2_dial/edges/*.bin
+gpt2_dial/optical/*.bin

@@ -20,11 +20,12 @@ class Notes:
         circ = C[f"{name}.circle"].astype(np.int64)
         self.q = np.where(circ >= CIRCLE // 2, circ - CIRCLE, circ)             # complement -> signed position on the circle
         self.gauge, self.u_in, self.bias = C[f"{name}.gauge"], C[f"{name}.u_in"], C[f"{name}.bias"]
+        import os; self.bias_real = C[f"{name}.bias_real"] if os.environ.get("BIAS_FLOAT") else None
         self.u_out = C[f"{name}.u_out"] if f"{name}.u_out" in C else None
     def stack(self, x_real):
         t = np.round(x_real / self.u_in).astype(np.int64)                        # the input as ticks on its dial (laps allowed)
-        pile = t @ self.q + self.bias                                            # exact integer stack of every landing
-        y = pile * self.gauge                                                    # real, for the law downstream
+        pile = t @ self.q + (0 if self.bias_real is not None else self.bias)     # exact integer stack of every landing
+        y = pile * self.gauge + (self.bias_real if self.bias_real is not None else 0)   # real, for the law downstream
         return np.round(y / self.u_out).astype(np.int64) * self.u_out if self.u_out is not None else y   # back onto the output dial
 def water(x, w, b): m = x.mean(); v = ((x - m) ** 2).mean(); return (x - m) / math.sqrt(v + 1e-5) * w + b
 def gelu(x): return 0.5 * x * (1 + np.tanh(0.7978845608028654 * (x + 0.044715 * x ** 3)))

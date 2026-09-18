@@ -587,3 +587,24 @@ Start: 106 ms/position (9.4 tok/s): one bank's lanes at a time, each lane waitin
   doubling, group sum: GPU 15.5 ms, wall 26.4 ms per position = 38 tok/s. Identical, 3 prompts x 4.
   Remaining: ~8 ms of round trips (laws on the CPU between laps) + ~2 ms conversions; GPU 15.5 ms vs
   a 5.4 ms memory floor (536 MB of edges per token at 100 GB/s) -- the 12-step doubling per edge.
+
+## 2026-09-18  how close the forks are (prompt 3, fp32 margins per generated token)
+[MEASURED] ' was' 0.374 | ' the' 0.859 | ' first' 2.169 | ' American' 0.759 | ' to' 0.522 | ' conquer' 0.077 |
+  ' the' 1.936 | ' Atlantic' 0.012 (runner-up ' New').  On rings near -100, 0.012 is ~1 part in 10,000.
+The circle export (notes with the input unit folded in, water-level outputs and the residual as
+integer ticks) flipped token 6 (0.077) at 2047 and token 8 (0.012) at 8191 on this prompt;
+double-precision laws (circle_run.py) and the GPU (optical_lm.swift) agree with each other, so
+it is the representation's rounding, not the runtime. piles.py / edge_model (per-column notes,
+no input-tick dial, float residual) happened to land on ' Atlantic'. A fork of 0.012 is below any
+12-bit dial's resolution; "identical" there is luck in either direction. Criterion from here:
+identical wherever the fp32 margin exceeds the dial's resolution; report the margin where it doesn't.
+
+## 2026-09-18  OPTICAL LM (optical_export.py, optical_lm.swift): the three steps
+Dense 16-bit edges (the circle number itself, index implicit): 247 MB. Laws on the GPU (water
+level, bend, limiter, residual adds), one command buffer per token. Two firings: one op per edge,
+or x added |c| times by doubling (shift-adds only).
+[MEASURED] 3 prompts x 8 tokens: prompts 1-2 identical; prompt 3 identical to token 7, token 8 is the
+  0.012 fork (' New' for ' Atlantic'). 23/24.
+  one-op firing:  5.30 ms per position, 4.98 ms on the GPU  ->  189 tok/s
+  doubling:      17.42 ms per position, 16.88 ms on the GPU ->   57 tok/s
+  (from 106 ms this morning; the memory floor for 247 MB of edges at 100 GB/s is 2.5 ms.)
