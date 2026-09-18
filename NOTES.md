@@ -572,3 +572,18 @@ an exact int64 with laps; gauged on the CPU; the laws run on the CPU in double a
   104 ms / 200,704 = 0.52 us per tick (every lane steps every tick; the tick is the constraint).
   Reading the output: free (the pile is the answer). Data movement per position: the input ticks
   into each bank (~75k ints) and the piles back (~133k ints); the 134M edges never move.
+
+## 2026-09-18  parallelising the edge field (edge_field.swift)
+Start: 106 ms/position (9.4 tok/s): one bank's lanes at a time, each lane waiting 4096 serial ticks.
+[MEASURED] ticks in parallel (64 blocks of 64 ticks per pile, prefix over blocks): 53 ms. Identical.
+[MEASURED] coalesced edge layout (neighbouring lanes read neighbouring words, 1.27 GB padded): 53 ms
+  (head 16.5 -> 9.6 ms, the rest slightly worse). Not memory-bound.
+[MEASURED] CPU<->GPU round trip: 0.164 ms per command buffer; 49 per token = 8 ms. Kernels inside one
+  buffer cost 5 us each. GPU-side execution was 38 of the 51 ms: the kernel itself was slow.
+[MEASURED] collapsing the tick wait by doubling (x added n times via shift-adds): 38 -> 35 ms GPU.
+  The wait loop was not the cost; the per-lane serial chain of dependent loads was (mproj, 48 edges
+  per lane, slowest).
+[MEASURED] one threadgroup (256 lanes) per pile sharing its sorted edge list, contributions by
+  doubling, group sum: GPU 15.5 ms, wall 26.4 ms per position = 38 tok/s. Identical, 3 prompts x 4.
+  Remaining: ~8 ms of round trips (laws on the CPU between laps) + ~2 ms conversions; GPU 15.5 ms vs
+  a 5.4 ms memory floor (536 MB of edges per token at 100 GB/s) -- the 12-step doubling per edge.
