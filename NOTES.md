@@ -533,3 +533,42 @@ same gauge. Token chords and positions as integer ticks on per-dimension residua
 residual stream is stacked as integer ticks. Only the laws (water level, bend, limiter) see reals.
 [MEASURED] 50.0% of notes are complements; laps: 91.4% zero, 5.9% one, 1.6% two, 0.6% three, ~1% more.
 [MEASURED] circle_run.py loads only circle.npz (566 MB): 3/3 prompts x 4 tokens IDENTICAL to fp32.
+
+## 2026-09-18  the light cone ON THE CIRCLE (light_cone_circle.py) -- exact tick changes
+One input phase (dim 100 of the last position) kicked by k ticks; per depth, share of dials whose
+tick count changed (exact) and mean |ticks| moved among them; head top-1 and margin change.
+[MEASURED]  k=1:   75-82% of dials moved at every depth, by ~2-4 ticks; head ' the', margin +0.001
+            k=16:  96% (d0, 16 ticks) -> 92% (d1, 9) -> 88% (d2, 6) -> 84% (d4, 4) -> 80% (d7, 3) -> 83% (d11, 3)
+            k=256: 99.7% (d0, 246 ticks) -> 99.3% (d1, 125) -> 99.3% (d2, 76) -> 98.7% (d4, 36) -> 98.3% (d7, 24) -> 98.1% (d11, 19); margin -0.002
+            k=1024: ~100% everywhere, 923 -> 233 ticks; head ' the', margin +0.129
+            k=2047: 100%, 1609 -> 987 ticks; head flips to ' a', margin -0.604
+Reading: on the circle the cone is FULL WIDTH from depth 0: one phase touches ~all dials at once.
+What falls with depth is the AMPLITUDE of the disturbance (~13x from d0 to d11 at k=256), not its
+reach. And up to k=256 the head's fork does not move (|dmargin| <= 0.005) although the entire ring
+moved by tens of ticks: the disturbance is out of tune with the chord and never reaches the fork.
+(The earlier float-space cone with bank-level ticks was mis-thresholded; this is the real one.)
+  dim 500 gives the same picture: k=1 71-82% moved by 2-4 ticks; k=256 99.7% (198 ticks) -> 98.5% (26 ticks); head unmoved (<= 0.003) until k=1024; at 2047 margin -0.671 but still ' the'.
+
+## 2026-09-18  where the time goes on the simulated medium (circle machine, per position)
+[MEASURED] 570 ms per position, 124M landings each:
+  superposing (input ticks x notes stacked into piles)  567.1 ms   99.6%
+  laws (water level, bend)                                 0.8 ms    0.1%
+  attention (resonance with the past, limiter)             1.1 ms    0.2%
+  reading the output (gauge, dial, argmax)                 0.5 ms    0.1%
+  block 5 fc, one chord: direct superposition 30.6 ms (2.36M int64 landings, numpy) vs FFT turn
+  27.6 ms (all 2.36M lags, spectrum pre-recorded): same integers. For one chord the FFT buys nothing.
+Reading: after the superposing, everything is free (0.4% of the time). The simulation's entire
+cost is that it has to superpose by hand; a medium's waves do that part on their own.
+
+## 2026-09-18  THE EDGE FIELD ON THE GPU (edges_export.py, edge_field.swift)
+Every note exported as an EDGE: word = input index | fire tick (4096 - angle) | laps | sign, sorted
+per pile by fire tick (123.1M angle edges + 10.7M lap edges, 4 bytes each, 589 MB). Every pile is
+a GPU lane with an integrator: for t in 0..4095 { fire every edge whose tick is t: rate += x*dir;
+level += rate }. Lap edges fire at tick 0 and are held the whole turn. The pile after the lap is
+an exact int64 with laps; gauged on the CPU; the laws run on the CPU in double and go back to dials.
+[MEASURED] 3 prompts x 4 tokens: ALL IDENTICAL to fp32 greedy.
+  106.4 ms per position wall; 104.0 ms of it inside the 49 laps on the GPU; 200,704 ticks per
+  position (49 x 4096); 134M edges fired per position. Effective tick on the M4 GPU as coded:
+  104 ms / 200,704 = 0.52 us per tick (every lane steps every tick; the tick is the constraint).
+  Reading the output: free (the pile is the answer). Data movement per position: the input ticks
+  into each bank (~75k ints) and the piles back (~133k ints); the 134M edges never move.

@@ -30,3 +30,4 @@ sleep_probe
 sorted_link
 steps_gemv
 steps_link
+gpt2_dial/edges/*.bin
