@@ -498,3 +498,38 @@ Reading: on a widening circle the neuron never has to read itself; the geometry 
 earlier failure (cos 0.07) was the two rings on the SAME circumference. Cost: the circle grows by
 the fan-out per fused rung (GPT-2 fc->mproj: 768*3072*768 = 1.8G slots; each further rung x768).
 In a rotator that is a lap `nout` times longer, i.e. the cone's rings grow geometrically.
+
+## 2026-09-18  the light cone of one note (per-neuron ticks = each neuron's max over the prompt / 2047)
+One input dimension of the last position kicked by k of its own ticks; share of neurons per depth
+that moved >= 1 of their ticks:
+[MEASURED]  k=1: 0% everywhere. k=16: 0.5% at depth 0, 0 after. k=256: 77% (d0) -> 59 -> 45 -> 35 -> 29
+  -> 24 -> 19 -> 17 -> 15 -> 16 -> 13 -> 12.6% (d11). k=2047 (full scale): 96.5% (d0) -> 81% (d11);
+  moved >= 16 ticks: 59% (d0) -> 32 -> 20 -> 12 -> 7 -> 5 -> 3 -> 2.5 -> 2.9 -> 3.1 -> 2.0 -> 1.7% (d11).
+  Head: 0% of logits moved a tick in every case.
+Reading: the cone of a single note NARROWS with depth. Small notes (<= 16 ticks) are swallowed at
+depth 0; a loud note reaches most neurons once but its disturbance decays ~2x per depth. The
+medium damps single notes; only what many notes agree on climbs. The head hears chords, not notes.
+[MEASURED] interference, two notes (dims 100, 500) at 256 ticks: neurons moved by (a+b) but by
+neither alone: 1.2% (d0) rising to ~9-11% (d5-d11); moved by a or b alone but not by (a+b): 8-12%
+at every depth. Roughly a tenth of the ring at every depth is constructive-or-destructive
+interference between just two notes.
+
+## 2026-09-18  how many harmonics does a layer need?
+The layer as one convolution costs one operation per HARMONIC of its note waveform. Spectrum of
+the row-concatenated waveform, bins sorted by energy:
+[MEASURED] GPT-2 fc/mproj/qkv, blocks 0, 5, 11: 50% of energy needs 18% of bins, 90% needs 58%,
+  99% needs 86%, 99.9% needs 95.5% -- identical to a random 768x3072 matrix (18.6/58.7/86.2/95.5).
+  Keeping the top 50% of harmonics: layer error 16-39%; top 25%: 34-81%; top 10%: 61-101%.
+Reading: GPT-2's note waveforms are white on the circle. The HRR form needs every harmonic, so
+for these notes it costs the same as the matmul (N log N vs N in software; one turn in a medium).
+The matmul -> HRR simplification is real only for notes MADE of few harmonics, i.e. a model
+trained in that form. Same fact as the 11.09-bit entropy of the dial angles, from the other side.
+
+## 2026-09-18  THE MODEL ON THE CIRCLE, WHOLE (circle_export.py, circle_run.py)
+Every one of the 123.5M weights exported as ONE unsigned 16-bit integer on a 65,536 circle:
+angle 0..4095 + 4096 x laps (0..15), negatives as complements (65536 - |q|), the input dial's unit
+folded into the note, one gauge per column (what a tick is worth). Biases as integer ticks on the
+same gauge. Token chords and positions as integer ticks on per-dimension residual dials. The
+residual stream is stacked as integer ticks. Only the laws (water level, bend, limiter) see reals.
+[MEASURED] 50.0% of notes are complements; laps: 91.4% zero, 5.9% one, 1.6% two, 0.6% three, ~1% more.
+[MEASURED] circle_run.py loads only circle.npz (566 MB): 3/3 prompts x 4 tokens IDENTICAL to fp32.
