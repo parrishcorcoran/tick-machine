@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" viewBox="0 0 760 360" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="760" height="360" fill="white"/>
+<text x="70" y="26" font-size="17" font-weight="600" fill="#111">The wavefront: edges that fired per turn</text>
+<text x="70" y="46" font-size="12" fill="#555">Streaming GPT-2, every block live every turn, full-precision input landing at once. An edge fires only where a dial's angle changed.</text>
+<line x1="70" y1="300.0" x2="740" y2="300.0" stroke="#eee"/>
+<text x="62" y="304.0" font-size="11" text-anchor="end" fill="#666">0</text>
+<line x1="70" y1="252.0" x2="740" y2="252.0" stroke="#eee"/>
+<text x="62" y="256.0" font-size="11" text-anchor="end" fill="#666">10,783</text>
+<line x1="70" y1="204.0" x2="740" y2="204.0" stroke="#eee"/>
+<text x="62" y="208.0" font-size="11" text-anchor="end" fill="#666">21,565</text>
+<line x1="70" y1="156.0" x2="740" y2="156.0" stroke="#eee"/>
+<text x="62" y="160.0" font-size="11" text-anchor="end" fill="#666">32,348</text>
+<line x1="70" y1="108.0" x2="740" y2="108.0" stroke="#eee"/>
+<text x="62" y="112.0" font-size="11" text-anchor="end" fill="#666">43,131</text>
+<line x1="70" y1="60.0" x2="740" y2="60.0" stroke="#eee"/>
+<text x="62" y="64.0" font-size="11" text-anchor="end" fill="#666">53,914</text>
+<rect x="74.8" y="77.8" width="22.3" height="222.2" fill="#1f77b4" rx="2"/>
+<text x="86.0" y="316" font-size="11" text-anchor="middle" fill="#666">1</text>
+<rect x="106.7" y="77.9" width="22.3" height="222.1" fill="#1f77b4" rx="2"/>
+<text x="117.9" y="316" font-size="11" text-anchor="middle" fill="#666">2</text>
+<rect x="138.6" y="94.9" width="22.3" height="205.1" fill="#1f77b4" rx="2"/>
+<text x="149.8" y="316" font-size="11" text-anchor="middle" fill="#666">3</text>
+<rect x="170.5" y="112.0" width="22.3" height="188.0" fill="#1f77b4" rx="2"/>
+<text x="181.7" y="316" font-size="11" text-anchor="middle" fill="#666">4</text>
+<rect x="202.4" y="129.1" width="22.3" height="170.9" fill="#1f77b4" rx="2"/>
+<text x="213.6" y="316" font-size="11" text-anchor="middle" fill="#666">5</text>
+<rect x="234.3" y="146.2" width="22.3" height="153.8" fill="#1f77b4" rx="2"/>
+<text x="245.5" y="316" font-size="11" text-anchor="middle" fill="#666">6</text>
+<rect x="266.2" y="163.3" width="22.3" height="136.7" fill="#1f77b4" rx="2"/>
+<text x="277.4" y="316" font-size="11" text-anchor="middle" fill="#666">7</text>
+<rect x="298.1" y="180.4" width="22.3" height="119.6" fill="#1f77b4" rx="2"/>
+<text x="309.3" y="316" font-size="11" text-anchor="middle" fill="#666">8</text>
+<rect x="330.0" y="197.4" width="22.3" height="102.6" fill="#1f77b4" rx="2"/>
+<text x="341.2" y="316" font-size="11" text-anchor="middle" fill="#666">9</text>
+<rect x="361.9" y="214.6" width="22.3" height="85.4" fill="#1f77b4" rx="2"/>
+<text x="373.1" y="316" font-size="11" text-anchor="middle" fill="#666">10</text>
+<rect x="393.8" y="231.6" width="22.3" height="68.4" fill="#1f77b4" rx="2"/>
+<text x="405.0" y="316" font-size="11" text-anchor="middle" fill="#666">11</text>
+<rect x="425.7" y="248.7" width="22.3" height="51.3" fill="#1f77b4" rx="2"/>
+<text x="436.9" y="316" font-size="11" text-anchor="middle" fill="#666">12</text>
+<rect x="457.6" y="265.8" width="22.3" height="34.2" fill="#1f77b4" rx="2"/>
+<text x="468.8" y="316" font-size="11" text-anchor="middle" fill="#666">13</text>
+<rect x="489.5" y="300.0" width="22.3" height="0.0" fill="#1f77b4" rx="2"/>
+<text x="500.7" y="316" font-size="11" text-anchor="middle" fill="#666">14</text>
+<rect x="521.5" y="300.0" width="22.3" height="0.0" fill="#1f77b4" rx="2"/>
+<text x="532.6" y="316" font-size="11" text-anchor="middle" fill="#666">15</text>
+<rect x="553.4" y="300.0" width="22.3" height="0.0" fill="#1f77b4" rx="2"/>
+<text x="564.5" y="316" font-size="11" text-anchor="middle" fill="#666">16</text>
+<rect x="585.3" y="300.0" width="22.3" height="0.0" fill="#1f77b4" rx="2"/>
+<text x="596.4" y="316" font-size="11" text-anchor="middle" fill="#666">17</text>
+<rect x="617.2" y="300.0" width="22.3" height="0.0" fill="#1f77b4" rx="2"/>
+<text x="628.3" y="316" font-size="11" text-anchor="middle" fill="#666">18</text>
+<rect x="649.1" y="300.0" width="22.3" height="0.0" fill="#1f77b4" rx="2"/>
+<text x="660.2" y="316" font-size="11" text-anchor="middle" fill="#666">19</text>
+<rect x="681.0" y="300.0" width="22.3" height="0.0" fill="#1f77b4" rx="2"/>
+<text x="692.1" y="316" font-size="11" text-anchor="middle" fill="#666">20</text>
+<rect x="712.9" y="300.0" width="22.3" height="0.0" fill="#1f77b4" rx="2"/>
+<text x="724.0" y="316" font-size="11" text-anchor="middle" fill="#666">21</text>
+<text x="405.0" y="346" font-size="12" text-anchor="middle" fill="#333">turn</text>
+<text transform="translate(16,180.0) rotate(-90)" font-size="12" text-anchor="middle" fill="#333">edges fired</text>
+<text x="740" y="74" font-size="12" text-anchor="end" fill="#b04a00">one depth goes quiet per turn; token stands at turn 13; silence from turn 14</text>
+</svg>
