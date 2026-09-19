@@ -622,3 +622,16 @@ Bytes lever: 16-bit dense is already near the information floor (11.09-bit phase
   12-bit phase plane + sign plane + sparse laps = ~243 MB, no saving.
 Remaining on this box: ~0.9 ms of ~150 small kernels (fusable to ~0.4) and ~20% better read pattern
   at best -> ceiling ~3.5-4 ms/token, ~250-280 tok/s. Current: 5.1 ms, 195 tok/s, identical.
+
+## 2026-09-18  resolving the whole sequence at once (diffusion-style), fp32 GPT-2
+All N=32 future positions in flight from a cold start (each holds the last prompt token); every pass
+rings every position from the current guesses of all the others and every position takes its
+answer; stop when nothing changes.
+[MEASURED] stands still at the exact greedy sequence (32/32) after 28 / 32 / 33 passes on the three
+  prompts (autoregressive: exactly 32). Every pass carries all 32 positions at once (rows are free on
+  the GPU; positions are free in a medium). A "commit only confident forks" schedule (margin > 1.0)
+  freezes at a wrong fixed point (0-2/32): bad schedule, not a property of the model.
+Reading: whole-sequence resolution works and is exact; with GPT-2's notes it costs about as many
+  passes as one token at a time, because a position's correct chord is the resolved token before it
+  and that resolves one position per pass along the chain. Fewer passes need notes trained to
+  resolve all positions at once, or a draft that is usually right.
